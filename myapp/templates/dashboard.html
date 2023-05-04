@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h1>Welcome, {{ session.username }}!</h1>
+    <p>Your files:</p>
+    <ul>
+      {% for file in files %}
+      <li>{{ file }}</li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </body>
+</html>

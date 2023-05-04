@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My App</title>
+  </head>
+  <body>
+    {% if 'username' in session %}
+      <p>Welcome, {{ session['username'] }}!</p>
+      <p><a href="{{ url_for('dashboard') }}">Dashboard</a></p>
+      <p><a href="{{ url_for('upload') }}">Upload File</a></p>
+      <p><a href="{{ url_for('logout') }}">Logout</a></p>
+    {% else %}
+      <p><a href="{{ url_for('signup') }}">Sign Up</a></p>
+      <p><a href="{{ url_for('signin') }}">Sign In</a></p>
+    {% endif %}
+  </body>
+</html>
